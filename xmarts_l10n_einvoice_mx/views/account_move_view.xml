@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="inherit_view_account_move_einvoice" model="ir.ui.view">
+        <field name="name">inherit_view_account_move_einvoice</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@id='header_right_group']" position="after">
+                <group id="header_einvoice_group1">
+                    <field name="edi_usage"/>
+                    <field name="edi_payment_method_id"/>
+                </group>
+                <group id="header_einvoice_group2">
+                    <!-- <field name="edi_pac_status"/> -->
+                    <label for="edi_pac_status"/>
+                    <div class="o_row" >
+                        <field name="edi_pac_status"/>
+                        <button name="edi_cancel_cfdi" string="CANCEL CFDI" class="oe_link" type="object" attrs="{'invisible':[('edi_pac_status', 'not in', ['signed','to_cancel'])]}"/>
+                        <button name="edi_sign_invoice" string="RETRY" class="oe_link" type="object" attrs="{'invisible':[('edi_pac_status', 'not in', ['retry'])]}"/>
+                    </div>
+                    <label for="edi_sat_status"/>
+                    <div class="o_row" >
+                        <field name="edi_sat_status"/>
+                        <button name="edi_update_sat_status" string="SAT STATUS" class="oe_link" type="object" />
+                    </div>
+                    <field name="edi_cfdi" filename="edi_cfdi_name"/>
+                    <field name="edi_cfdi_name" invisible="1"/>
+                    <field name="edi_cfdi_uuid"/>
+                    <field name="edi_cfdi_relation_type"/>
+                    <field name="edi_cfdi_origin"/>
+                </group>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page name="einvoice_data" string="CFDI">
+                    <group >
+                        <group id="header_einvoice_cfdi_group1">
+                            <field name="edi_cadena_original" />
+                            <field name="edi_cfdi_supplier_rfc" />
+                            <field name="edi_cfdi_customer_rfc" />
+                        </group>
+                        <group id="header_einvoice_cfdi_group2">
+                            <field name="edi_cfdi_amount" />
+                            <field name="edi_folio" />
+                            <field name="edi_serie" />
+                        </group>
+                    </group>
+                    <group >
+                        <group id="header_einvoice_cfdi_group2">
+                            <field name="edi_cadena_original" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

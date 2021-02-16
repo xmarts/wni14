@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <record id="uom_sat_code_inherit_form" model="ir.ui.view">
+            <field name="name">uom_sat_code_inherit_form</field>
+            <field name="model">uom.uom</field>
+            <field name="inherit_id" ref="uom.product_uom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='uom_type']" position="after">
+                    <field name="edi_code_sat_id" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>

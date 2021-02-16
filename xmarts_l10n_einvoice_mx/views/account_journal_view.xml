@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <record id="view_account_journal_form_inherit_einvoice_mx" model="ir.ui.view">
+            <field name="name">account.journal.view.form.inherit</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name='edi_address_issued_id' />
+                </xpath>
+            </field>
+        </record>
+        
+
+    </data>
+
+</odoo>

@@ -1,0 +1,19 @@
+<odoo>
+  <data>
+    <record id="action_res_country_einvoice" model="ir.actions.act_window">
+      <field name="name">Paises</field>
+      <field name="res_model">res.country</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+              Create a new country
+          </p>
+      </field>
+  </record>
+  <menuitem id="account_einvoice_countries_menu" 
+  name="Paises" 
+  parent="account.menu_finance_configuration" 
+  sequence="99" 
+  action="action_res_country_einvoice"/>
+  </data>
+</odoo>

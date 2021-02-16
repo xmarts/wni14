@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cfdi:Comprobante 
+xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/ComercioExterior11 http://www.sat.gob.mx/sitio_internet/cfd/ComercioExterior11/ComercioExterior11.xsd" 
+xmlns:cfdi="http://www.sat.gob.mx/cfd/3" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+Version="3.3" Fecha="22/12/2020" Folio="1" Serie="INV/2020/" FormaPago="01" NoCertificado="30001000000400002434" 
+Certificado="MIIFuzCCA6OgAwIBAgIUMzAwMDE" 
+CondicionesDePago="15 Dias" SubTotal="100" Descuento="0" Moneda="MXN" TipoCambio="1" 
+Total="100" TipoComprobante="I" MetodoPago="PUE" LugarExpedicion="51400">
+    <cfdi:CfdiRelacionados TipoRelacion="04">
+        <cfdi:CfdiRelacionado UUID="11111111111111"/>
+    </cfdi:CfdiRelacionados>
+    <cfdi:Emisor RFC="XXXXXXXX" Nombre="Pablo" RegimenFiscal="01"/>
+    <cfdi:Receptor Rfc="ZZZZZZZZ" Nombre="Daniela" ResidenciaFiscal="MEX" NumRegIdTrib="0102030405" UsoCFDI="G01"/>
+    <cfdi:Conceptos>
+        <cfdi:Concepto ClaveProdServ="01010101" NoIdentificacion="X001" Cantidad="1" ClaveUnidad="H87" Unidad="Unidades" Descripcion="Pruebas" ValorUnitario="100" Importe="100" Descuento="0">
+            <cfdi:Impuestos>
+                <cfdi:Traslados>
+                    <cfdi:Traslado Base="100" Impuesto="x" TipoFactor="Tasa" TasaOCuota="16" Importe="16"/>
+                </cfdi:Traslados>
+                <cfdi:Retenciones>
+                    <cfdi:Retencion Base="100" Impuesto="x" TipoFactor="Tasa" TasaOCuota="15" Importe="15"/>
+                </cfdi:Retenciones>
+            </cfdi:Impuestos>
+            <cfdi:InformacionAduanera xmlns:cfdi="http://www.sat.gob.mx/cfd/3" NumeroPedimento="001002003"/>
+        </cfdi:Concepto>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos TotalImpuestosTrasladados="1" TotalImpuestosRetenidos="2">
+        <cfdi:Retenciones>
+            <cfdi:Retencion Importe="2" Impuesto="Retencion1"/>
+        </cfdi:Retenciones>
+        <cfdi:Traslados>
+            <cfdi:Traslado Importe="1" Impuesto="IVA16" TipoFactor="Tasa" TasaCuota="16"/>
+        </cfdi:Traslados>
+    </cfdi:Impuestos>
+</cfdi:Comprobante> 

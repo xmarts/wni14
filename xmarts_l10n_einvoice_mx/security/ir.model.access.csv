@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_einvoice_payment_method,einvoice.payment.method,model_einvoice_payment_method,,1,0,0,0
+access_edi_product_sat_code,edi.product.sat.code,model_edi_product_sat_code,,1,0,0,0
+access_einvoice_edi_certificate,einvoice.edi.certificate,model_einvoice_edi_certificate,,1,1,1,1

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <record id="view_account_tax_inh_einvoice_mx" model="ir.ui.view">
+            <field name="name">view_account_tax_inh_einvoice_mx</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='analytic']" position="before">
+                    <field name="edi_cfdi_tax_type"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>

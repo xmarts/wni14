@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <record id="res_config_settings_view_form_inherit_einvoice" model="ir.ui.view">
+            <field name="name">res_config_settings_view_form_inherit_einvoice</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='invoicing_settings']" position="after">
+                    <h2>Einvoice PAC</h2>
+                    <div class="row mt16 o_settings_container" id="l10n_mx_sign_invoice_settings">
+                        <!-- <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Certificado.</span>
+                                <div class="text-muted">
+                                    Seleccione su archivo '.cer'
+                                </div>
+                                <div class="text-muted">
+                                    <field name="edi_certificate"/>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-12 col-lg-6 o_setting_box" groups="base.group_no_one">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Usuario DB.</span>
+                                <div class="text-muted">
+                                    Coloque su usuario para la BD de timbrado.
+                                </div>
+                                <div class="text-muted">
+                                    <field name="edi_user_bd" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box" groups="base.group_no_one">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Contraseña DB.</span>
+                                <div class="text-muted">
+                                    Coloque su Contraseña para la DB de timbrado.
+                                </div>
+                                <div class="text-muted">
+                                    <field name="edi_passw_bd" password="True"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box" groups="base.group_no_one">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">URL DB.</span>
+                                <div class="text-muted">
+                                    Coloque su url para la DB de timbrado.
+                                </div>
+                                <div class="text-muted">
+                                    <field name="edi_url_bd" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box" groups="base.group_no_one">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Nombre DB.</span>
+                                <div class="text-muted">
+                                    Coloque su nombre para la DB de timbrado.
+                                </div>
+                                <div class="text-muted">
+                                    <field name="edi_name_bd" />
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Usuario PAC.</span>
+                                <div class="text-muted">
+                                    Coloque su usuario para el PAC de timbrado.
+                                </div>
+                                <div class="text-muted">
+                                    <field name="edi_user_pac"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Llave del Certificado.</span>
+                                <div class="text-muted">
+                                    Seleccione su archivo '.key'
+                                </div>
+                                <div class="text-muted">
+                                    <field name="edi_certificate_key"/>
+                                </div>
+                            </div>
+                        </div> -->
+
+                         <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Contrseña del PAC.</span>
+                                <div class="text-muted">
+                                    Coloque su contraseña para el PAC de timbrado.
+                                </div>
+                                <div class="text-muted">
+                                    <field name="edi_pass_pac" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Contraseña del Certificado.</span>
+                                <div class="text-muted">
+                                    Coloque su contraseña.
+                                </div>
+                                <div class="text-muted">
+                                    <field name="edi_certificate_pass" />
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="edi_test_pac"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Pruebas.</span>
+                                <div class="text-muted">
+                                    Seleccione si desea que el PAC se ejecute en modo pruebas.
+                                </div>
+                                <!-- <div class="text-muted">
+                                    <field name="edi_test_pac"/>
+                                </div> -->
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Regimen Fiscal.</span>
+                                <div class="text-muted">
+                                    Seleccione su Regimen Fiscal.
+                                </div>
+                                <div class="text-muted">
+                                    <field name="edi_fiscal_regime" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">..........</span>
+                                <div class="text-muted">
+                                   .
+                                </div>
+                                <div class="text-muted">
+                                    <field name="c_serial_number" />
+                                    <field name="c_date_start" />
+                                    <field name="c_date_end" />
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="col-12 col-lg-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">MX Certificados</span>
+                            <div class="text-muted">
+                                Configure sus certificados SAT.
+                            </div>
+                            <div class="row mt16">
+                                <field name="edi_certificate_ids"/>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+
+                        
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>
