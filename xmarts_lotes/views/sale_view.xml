@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="sale_xmarts_lotes" model="ir.ui.view">
+        <field name="name">sale_xmarts_lotes</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//header" position="inside">
+                <button name="move_action_assign" attrs="{'invisible':[('show_check_availability','=',False)]}" string="Reservar Disponibles" type="object" class="oe_highlight"/>
+                <field name="show_check_availability" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="show_reserved_warning" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//field[@name='order_line']/tree//field[@name='product_uom_qty']" position="after">
+
+    	<field name="moves_reserved_qty" invisible="1"/>
+        <field name="related_lots"/>
+	</xpath>
+        </field>
+    </record>
+    <record id="sale_xmarts_lotes_warning" model="ir.ui.view">
+        <field name="name">sale_xmarts_lotes_warning</field>
+        <field name="model">sale.advance.payment.inv</field>
+        <field name="inherit_id" ref="sale.view_sale_advance_payment_inv"/>
+        <field name="arch" type="xml">
+            <xpath expr="//p" position="after">
+                <field name="has_reserved_warning" invisible="1"/>
+               <p class="alert alert-warning" role="alert" attrs="{'invisible': [('has_reserved_warning', '=', False)]}">
+                        Las facturas seran creadas con la cantidad reservada.
+                    </p>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
+

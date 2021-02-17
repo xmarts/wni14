@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+mercado_segmentos,segmentos,model_segmento,,1,1,1,1
+mercado_segmentos_line,segmentos_line,model_segmento_line,,1,1,1,1

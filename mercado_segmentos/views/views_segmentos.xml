@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Tree View of Customer-->
+        <record id="segmentos_line_tree_view" model="ir.ui.view">
+            <field name="name">segmentos.line.tree.view</field>
+            <field name="model">segmento.line</field>
+            <field name="arch" type="xml">
+                <tree string="Segmentos" create="0" edit="0">
+                    <field name="id" invisible="1"/>
+                    <field name="segmento_id"/>
+                    <field name="region" />
+                    <field name="value" sum="Sum of Valor"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="segmentos_tree_view" model="ir.ui.view">
+            <field name="name">segmentos.tree.view</field>
+            <field name="model">segmento</field>
+            <field name="arch" type="xml">
+                <tree string="Segmentos">
+                    <field name="id" invisible="1"/>
+                    <field name="name"/>
+                    <field name="total_amount" sum="Sum of Total"/>
+                    <field name="segmento_lines" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="segmentos_form_view" model="ir.ui.view">
+            <field name="name">segmentos.form.view</field>
+            <field name="model">segmento</field>
+            <field name="arch" type="xml">
+                <form string="Segmentos">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="......"/>
+                            </h1>
+                        </div>
+                        <div>
+                            <group>
+                                <group>
+                                    <field name="id" invisible="1"/>
+                                    <field name="total_amount" />
+                                </group>
+                                <group/>
+                            </group>
+                        </div>
+                        <notebook>
+                            <page name="Regiones">
+                            <field name="segmento_lines" mode="tree,from" context="{'default_segmento_id': id}">
+                                <tree editable="bottom">
+                                    <field name="id" invisible="1"/>
+                                    <field name="segmento_id" invisible="1"/>
+                                    <field name="region"/>
+                                    <field name="value" sum="Sum of Valor"/>
+                                </tree>
+                            </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_open_segmentos_tree" model="ir.actions.act_window">
+            <field name="name">Menu de Segmentos</field>
+            <field name="res_model">segmento</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click here to create!
+                </p>
+            </field>
+        </record>
+
+        <record id="view_open_segmentos_line_tree" model="ir.actions.act_window">
+            <field name="name">Region de Segmentos</field>
+            <field name="res_model">segmento.line</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'group_by':'segmento_id'}</field>
+        </record>
+
+        <menuitem name="Segmentos.." id="segmento_submenu" parent="crm.crm_menu_config" sequence="99"/>
+        <menuitem name="Segmentos" id="segmento_action" parent="segmento_submenu"
+                  action="view_open_segmentos_tree"
+                  sequence="1"/>
+        <menuitem name="Linea de Segmentos" id="segmento_line_action" parent="segmento_submenu"
+                  action="view_open_segmentos_line_tree"
+                  sequence="2"/>
+
+    </data>
+</odoo>

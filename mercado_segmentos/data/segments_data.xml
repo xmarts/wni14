@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+<!--        region = 'mkt''monterrey''guadalajara''leon''mexico''puebla'-->
+        <record id="segmento_automotive" model="segmento">
+            <field name="name">Automotive</field>
+        </record>
+        <record id="segmento_automotive_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive"/>
+            <field name="region">mkt</field>
+            <field name="value">1375110</field>
+        </record>
+        <record id="segmento_automotive_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive"/>
+            <field name="region">monterrey</field>
+            <field name="value">292820</field>
+        </record>
+        <record id="segmento_automotive_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive"/>
+            <field name="region">guadalajara</field>
+            <field name="value">186340</field>
+        </record>
+        <record id="segmento_automotive_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive"/>
+            <field name="region">leon</field>
+            <field name="value">279510</field>
+        </record>
+        <record id="segmento_automotive_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive"/>
+            <field name="region">mexico</field>
+            <field name="value">479160</field>
+        </record>
+        <record id="segmento_automotive_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive"/>
+            <field name="region">puebla</field>
+            <field name="value">93170</field>
+        </record>
+
+        <record id="segmento_motor_cycles" model="segmento">
+            <field name="name">Motor Cycles</field>
+        </record>
+        <record id="segmento_motor_cycles_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_cycles"/>
+            <field name="region">mkt</field>
+            <field name="value">110009</field>
+        </record>
+        <record id="segmento_motor_cycles_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_cycles"/>
+            <field name="region">monterrey</field>
+            <field name="value">23426</field>
+        </record>
+        <record id="segmento_motor_cycles_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_cycles"/>
+            <field name="region">guadalajara</field>
+            <field name="value">14907</field>
+        </record>
+        <record id="segmento_motor_cycles_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_cycles"/>
+            <field name="region">leon</field>
+            <field name="value">22361</field>
+        </record>
+        <record id="segmento_motor_cycles_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_cycles"/>
+            <field name="region">mexico</field>
+            <field name="value">38333</field>
+        </record>
+        <record id="segmento_motor_cycles_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_cycles"/>
+            <field name="region">puebla</field>
+            <field name="value">7454</field>
+        </record>
+
+        <record id="segmento_motor_vehicles" model="segmento">
+            <field name="name">Motor Vehicles</field>
+        </record>
+        <record id="segmento_motor_vehicles_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_vehicles"/>
+            <field name="region">mkt</field>
+            <field name="value">893822</field>
+        </record>
+        <record id="segmento_motor_vehicles_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_vehicles"/>
+            <field name="region">monterrey</field>
+            <field name="value">190333</field>
+        </record>
+        <record id="segmento_motor_vehicles_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_vehicles"/>
+            <field name="region">guadalajara</field>
+            <field name="value">121121</field>
+        </record>
+        <record id="segmento_motor_vehicles_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_vehicles"/>
+            <field name="region">leon</field>
+            <field name="value">181682</field>
+        </record>
+        <record id="segmento_motor_vehicles_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_vehicles"/>
+            <field name="region">mexico</field>
+            <field name="value">311454</field>
+        </record>
+        <record id="segmento_motor_vehicles_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_motor_vehicles"/>
+            <field name="region">puebla</field>
+            <field name="value">60561</field>
+        </record>
+
+        <record id="segmento_automotive_supplier" model="segmento">
+            <field name="name">Automotive Supplier</field>
+        </record>
+        <record id="segmento_automotive_supplier_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive_supplier"/>
+            <field name="region">mkt</field>
+            <field name="value">371280</field>
+        </record>
+        <record id="segmento_automotive_supplier_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive_supplier"/>
+            <field name="region">monterrey</field>
+            <field name="value">79061</field>
+        </record>
+        <record id="segmento_automotive_supplier_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive_supplier"/>
+            <field name="region">guadalajara</field>
+            <field name="value">50312</field>
+        </record>
+        <record id="segmento_automotive_supplier_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive_supplier"/>
+            <field name="region">leon</field>
+            <field name="value">75468</field>
+        </record>
+        <record id="segmento_automotive_supplier_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive_supplier"/>
+            <field name="region">mexico</field>
+            <field name="value">129373</field>
+        </record>
+        <record id="segmento_automotive_supplier_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_automotive_supplier"/>
+            <field name="region">puebla</field>
+            <field name="value">25156</field>
+        </record>
+
+        <record id="segmento_quimica" model="segmento">
+            <field name="name">Quimica</field>
+        </record>
+        <record id="segmento_quimica_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_quimica"/>
+            <field name="region">mkt</field>
+            <field name="value">821171</field>
+        </record>
+        <record id="segmento_quimica_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_quimica"/>
+            <field name="region">monterrey</field>
+            <field name="value">139599</field>
+        </record>
+        <record id="segmento_quimica_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_quimica"/>
+            <field name="region">guadalajara</field>
+            <field name="value">90329</field>
+        </record>
+        <record id="segmento_quimica_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_quimica"/>
+            <field name="region">leon</field>
+            <field name="value">156022</field>
+        </record>
+        <record id="segmento_quimica_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_quimica"/>
+            <field name="region">mexico</field>
+            <field name="value">369527</field>
+        </record>
+        <record id="segmento_quimica_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_quimica"/>
+            <field name="region">puebla</field>
+            <field name="value">65694</field>
+        </record>
+
+        <record id="segmento_farma" model="segmento">
+            <field name="name">Farma</field>
+        </record>
+        <record id="segmento_farma_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_farma"/>
+            <field name="region">mkt</field>
+            <field name="value">710202</field>
+        </record>
+        <record id="segmento_farma_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_farma"/>
+            <field name="region">monterrey</field>
+            <field name="value">120734</field>
+        </record>
+        <record id="segmento_farma_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_farma"/>
+            <field name="region">guadalajara</field>
+            <field name="value">78122</field>
+        </record>
+        <record id="segmento_farma_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_farma"/>
+            <field name="region">leon</field>
+            <field name="value">134938</field>
+        </record>
+        <record id="segmento_farma_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_farma"/>
+            <field name="region">mexico</field>
+            <field name="value">319591</field>
+        </record>
+        <record id="segmento_farma_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_farma"/>
+            <field name="region">puebla</field>
+            <field name="value">56816</field>
+        </record>
+
+        <record id="segmento_construction" model="segmento">
+            <field name="name">Construction</field>
+        </record>
+        <record id="segmento_construction_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_construction"/>
+            <field name="region">mkt</field>
+            <field name="value">1067695</field>
+        </record>
+        <record id="segmento_construction_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_construction"/>
+            <field name="region">monterrey</field>
+            <field name="value">202862</field>
+        </record>
+        <record id="segmento_construction_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_construction"/>
+            <field name="region">guadalajara</field>
+            <field name="value">149477</field>
+        </record>
+        <record id="segmento_construction_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_construction"/>
+            <field name="region">leon</field>
+            <field name="value">85416</field>
+        </record>
+        <record id="segmento_construction_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_construction"/>
+            <field name="region">mexico</field>
+            <field name="value">320309</field>
+        </record>
+        <record id="segmento_construction_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_construction"/>
+            <field name="region">puebla</field>
+            <field name="value">309632</field>
+        </record>
+
+        <record id="segmento_real_estate" model="segmento">
+            <field name="name">Real Estate</field>
+        </record>
+        <record id="segmento_real_estate_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_real_estate"/>
+            <field name="region">mkt</field>
+            <field name="value">682625</field>
+        </record>
+        <record id="segmento_real_estate_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_real_estate"/>
+            <field name="region">monterrey</field>
+            <field name="value">129699</field>
+        </record>
+        <record id="segmento_real_estate_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_real_estate"/>
+            <field name="region">guadalajara</field>
+            <field name="value">95567</field>
+        </record>
+        <record id="segmento_real_estate_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_real_estate"/>
+            <field name="region">leon</field>
+            <field name="value">54610</field>
+        </record>
+        <record id="segmento_real_estate_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_real_estate"/>
+            <field name="region">mexico</field>
+            <field name="value">204787</field>
+        </record>
+        <record id="segmento_real_estate_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_real_estate"/>
+            <field name="region">puebla</field>
+            <field name="value">197961</field>
+        </record>
+
+        <record id="segmento_hospitality" model="segmento">
+            <field name="name">Hospitality</field>
+        </record>
+        <record id="segmento_hospitality_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_hospitality"/>
+            <field name="region">mkt</field>
+            <field name="value">192049</field>
+        </record>
+        <record id="segmento_hospitality_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_hospitality"/>
+            <field name="region">monterrey</field>
+            <field name="value">78740</field>
+        </record>
+        <record id="segmento_hospitality_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_hospitality"/>
+            <field name="region">guadalajara</field>
+            <field name="value">5761</field>
+        </record>
+        <record id="segmento_hospitality_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_hospitality"/>
+            <field name="region">leon</field>
+            <field name="value">5761</field>
+        </record>
+        <record id="segmento_hospitality_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_hospitality"/>
+            <field name="region">mexico</field>
+            <field name="value">63376</field>
+        </record>
+        <record id="segmento_hospitality_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_hospitality"/>
+            <field name="region">puebla</field>
+            <field name="value">38410</field>
+        </record>
+
+        <record id="segmento_wholesale" model="segmento">
+            <field name="name">Wholesale</field>
+        </record>
+        <record id="segmento_wholesale_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_wholesale"/>
+            <field name="region">mkt</field>
+            <field name="value">105152</field>
+        </record>
+        <record id="segmento_wholesale_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_wholesale"/>
+            <field name="region">monterrey</field>
+            <field name="value">19979</field>
+        </record>
+        <record id="segmento_wholesale_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_wholesale"/>
+            <field name="region">guadalajara</field>
+            <field name="value">1051.525</field>
+        </record>
+        <record id="segmento_wholesale_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_wholesale"/>
+            <field name="region">leon</field>
+            <field name="value">1051.525</field>
+        </record>
+        <record id="segmento_wholesale_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_wholesale"/>
+            <field name="region">mexico</field>
+            <field name="value">65195</field>
+        </record>
+        <record id="segmento_wholesale_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_wholesale"/>
+            <field name="region">puebla</field>
+            <field name="value">17875.9</field>
+        </record>
+
+        <record id="segmento_retail" model="segmento">
+            <field name="name">Retail</field>
+        </record>
+        <record id="segmento_retail_mkt" model="segmento.line">
+            <field name="segmento_id" ref="segmento_retail"/>
+            <field name="region">mkt</field>
+            <field name="value">41709</field>
+        </record>
+        <record id="segmento_retail_monterrey" model="segmento.line">
+            <field name="segmento_id" ref="segmento_retail"/>
+            <field name="region">monterrey</field>
+            <field name="value">7924.6</field>
+        </record>
+        <record id="segmento_retail_guadalajara" model="segmento.line">
+            <field name="segmento_id" ref="segmento_retail"/>
+            <field name="region">guadalajara</field>
+            <field name="value">417.085</field>
+        </record>
+        <record id="segmento_retail_leon" model="segmento.line">
+            <field name="segmento_id" ref="segmento_retail"/>
+            <field name="region">leon</field>
+            <field name="value">417.085</field>
+        </record>
+        <record id="segmento_retail_mexico" model="segmento.line">
+            <field name="segmento_id" ref="segmento_retail"/>
+            <field name="region">mexico</field>
+            <field name="value">28859</field>
+        </record>
+        <record id="segmento_retail_puebla" model="segmento.line">
+            <field name="segmento_id" ref="segmento_retail"/>
+            <field name="region">puebla</field>
+            <field name="value">7090.4</field>
+        </record>
+    </data>
+</odoo>
