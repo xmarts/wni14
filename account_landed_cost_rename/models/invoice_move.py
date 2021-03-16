@@ -7,8 +7,7 @@ from odoo import models, fields, api, _
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    def _post(self, soft=True):
-        res = super(AccountMove, self)._post(soft=soft)
+    def post(self):
         # OVERRIDE
         for move in self.filtered(lambda move: move.is_invoice()):
             for line in move.line_ids:
@@ -20,11 +19,10 @@ class AccountMove(models.Model):
                     line.customs_number = ','.join(
                         list(set(lots.mapped('pedimento_si'))))
 
-        return res
+        super(AccountMove, self).post()
 
 
 class AccountMoveLine(models.Model):
-    _inherit = 'account.move.line'
 
     customs_number = fields.Char(
         help='Optional field for entering the customs information in the case '

@@ -9,12 +9,12 @@
     'depends': ['base','account','xmarts_lotes'],
     'data': [
         'views/production_lot_views.xml',
-        'views/account_move.xml',
     ],
     'qweb': [
         ],
     'demo': [],
     'test': [],
+    "post_load": "post_load",
     'installable': True,
     'auto_install': False,
 }
