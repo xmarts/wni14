@@ -7,22 +7,26 @@ from odoo import models, fields, api, _
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    def post(self):
+    def _post(self, soft=True):
+        res = super(AccountMove, self)._post(soft=soft)
         # OVERRIDE
         for move in self.filtered(lambda move: move.is_invoice()):
             for line in move.line_ids:
                 if line.related_reserved_lots:
                     related_lots = line.related_reserved_lots.split(",")
-                    lots = self.env['stock.production.lot'].sudo().search([
-                        ('name', 'in', related_lots), ('pedimento_si', '!=', False)
+                    moves = self.env['stock.move.line'].sudo().search([
+                        ('lot_id.name', 'in', related_lots),
+                        ('picking_id.customs_number', '!=', False),
+                        ('picking_id.picking_type_code', '=', 'incoming'),
                     ])
                     line.customs_number = ','.join(
-                        list(set(lots.mapped('pedimento_si'))))
+                        list(set(moves.mapped('picking_id.customs_number'))))
 
-        super(AccountMove, self).post()
+        return res
 
 
 class AccountMoveLine(models.Model):
+    _inherit = 'account.move.line'
 
     customs_number = fields.Char(
         help='Optional field for entering the customs information in the case '

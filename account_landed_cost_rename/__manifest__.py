@@ -8,13 +8,14 @@
     'author':'Xmarts',
     'depends': ['base','account','xmarts_lotes'],
     'data': [
-        'views/production_lot_views.xml',
+        #'views/production_lot_views.xml',
+        'views/account_move.xml',
+        'views/stock_picking_views.xml',
     ],
     'qweb': [
         ],
     'demo': [],
     'test': [],
-    "post_load": "post_load",
     'installable': True,
     'auto_install': False,
 }
