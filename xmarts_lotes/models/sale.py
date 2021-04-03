@@ -11,20 +11,6 @@ class SaleOrder(models.Model):
 
     show_check_availability = fields.Boolean(string='Delivery Orders', compute='_compute_check_availability',
                                              copy=False)
-    show_reserved_warning = fields.Boolean(string='Show reserved Warning', compute='_compute_reserved_warning',
-                                           copy=False)
-
-    @api.depends('order_line', 'order_line.product_uom_qty', 'order_line.moves_reserved_qty', 'order_line.qty_invoiced',
-                 'order_line.product_id')
-    def _compute_reserved_warning(self):
-        warning = False
-        for line in self.order_line.filtered(lambda x: x.display_type not in ['line_section', 'line_note']):
-            qty = line.product_uom_qty - line.qty_invoiced
-            if line.moves_reserved_qty != qty and line.product_id.tracking != 'none':
-                warning = True
-            else:
-                pass
-        self.show_reserved_warning = warning
 
     @api.depends('picking_ids')
     def _compute_check_availability(self):
@@ -84,20 +70,5 @@ class SaleOrderLine(models.Model):
     def _prepare_invoice_line(self, **optional_values):
         values = super(SaleOrderLine, self)._prepare_invoice_line(**optional_values)
         if self.product_id.tracking != 'none':
-            values['quantity'] = self.moves_reserved_qty
             values['related_reserved_lots'] = self.related_lots
         return values
-
-
-class SaleAdvancePaymentInv(models.TransientModel):
-    _inherit = "sale.advance.payment.inv"
-
-    @api.model
-    def _default_has_reserved_warning(self):
-        if self._context.get('active_model') == 'sale.order' and self._context.get('active_id', False):
-            sale_order = self.env['sale.order'].sudo().browse(self._context.get('active_id'))
-            return sale_order.show_reserved_warning
-
-        return False
-
-    has_reserved_warning = fields.Boolean('Has reserved warning', default=_default_has_reserved_warning, readonly=True)
